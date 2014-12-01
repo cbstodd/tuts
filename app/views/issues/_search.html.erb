@@ -1,0 +1,39 @@
+<div class="well">
+  <h2>Search</h2>
+
+  <%= form_tag '/search', :method => :get do %>
+    <p>
+      <%= text_field :title, nil, size: 30, placeholder: 'search issues' %>
+    </p>
+
+    <ul>
+      <li><%= check_box :followers, 1%> 1 follower </li>
+      <li><%= check_box :followers, 2 %> 2 followers </li>
+      <li><%= check_box :followers, 3 %> 3+ followers </li>
+    </ul>
+
+
+    <table class="btn-group open">
+      <tr>
+        <th>Start date</th>
+      </tr>
+      <tr>
+        <td>
+          <%= date_select :created_at_start, nil, class: 'btn btn-default' %>
+        </td>
+      </tr>
+      <tr>
+        <th>End date</th>
+      </tr>
+      <tr>
+        <td>
+          <%= date_select :created_at_end, nil, class: 'btn btn-default' %>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <%= submit_tag 'Search issues', class: 'btn btn-primary' %>
+    </p>
+    </div>
+<% end %>
